@@ -14,9 +14,9 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item"><a class="nav-link active"
                                         aria-current="page" href="index.jsp">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="./contacto/contacto.jsp"><b>Contacto</b></a>
+                <li class="nav-item"><a class="nav-link" href="contacto.jsp"><b>Contacto</b></a>
                 </li>
-                <li class="nav-item"><a class="nav-link" href="./capacitacion/listaCapacitaciones.jsp"><b>Capacitaciones</b></a>
+                <li class="nav-item"><a class="nav-link" href="listaCapacitaciones.jsp"><b>Capacitaciones</b></a>
                 </li>
                 <li class="nav-item"><a class="nav-link" href=""><b>Usuarios</b></a>
                 </li>

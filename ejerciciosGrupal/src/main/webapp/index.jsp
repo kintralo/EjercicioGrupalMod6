@@ -10,7 +10,7 @@
             crossorigin="anonymous">
 </head>
 <body>
-<jsp:include page='views/header/header.jsp'>
+<jsp:include page='header.jsp'>
     <jsp:param name='title' value='Welcome'/>
 </jsp:include>
 <section>
@@ -90,7 +90,7 @@
         </div>
     </div>
 </section>
-<jsp:include page='views/footer/footer.jsp'>
+<jsp:include page='footer.jsp'>
     <jsp:param name='title' value='Welcome'/>
 </jsp:include>
 
