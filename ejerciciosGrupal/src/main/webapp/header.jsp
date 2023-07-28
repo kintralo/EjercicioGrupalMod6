@@ -18,8 +18,6 @@
                 </li>
                 <li class="nav-item"><a class="nav-link" href="listaCapacitaciones.jsp"><b>Capacitaciones</b></a>
                 </li>
-                <li class="nav-item"><a class="nav-link" href=""><b>Usuarios</b></a>
-                </li>
                 <!--
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -41,7 +39,7 @@
             if (request.getSession() != null) {
 
         %>
-        <form action="servlet-cerrar-sesion" method="POST" class="justify-content-end" role="search">
+        <form action="" method="POST" class="justify-content-end" role="search">
             <button class="btn btn-outline-success " type="submit">Cerrar Sesión</button>
         </form>
         <%

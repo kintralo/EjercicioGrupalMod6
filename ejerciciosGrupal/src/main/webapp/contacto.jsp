@@ -20,9 +20,6 @@
 
 </head>
 <body>
-<%
-    if (request.getSession().getAttribute("sesion") != null) {
-%>
 
 <jsp:include page='header.jsp'>
     <jsp:param name='title' value='Welcome'/>
@@ -58,11 +55,7 @@
     </div>
 </div>
 
-<%
-    } else {
-        response.sendRedirect("login.jsp");
-    }
-%>
+
 
 <jsp:include page='footer.jsp'/>
 

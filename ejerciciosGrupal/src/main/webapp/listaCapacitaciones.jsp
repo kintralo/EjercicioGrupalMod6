@@ -31,9 +31,7 @@
 
 </head>
 <body>
-<%
-    if (request.getSession().getAttribute("sesion") != null) {
-%>
+
 
 <jsp:include page='header.jsp'/>
 <jsp:include page='modalCapacitacion.jsp' flush="true"/>
@@ -117,11 +115,7 @@
     </div>
 </div>
 </br>
-<%
-    } else {
-    response.sendRedirect("login.jsp");
-    }
-%>
+
 <jsp:include page='footer.jsp'/>
 
 <script>
