@@ -16,7 +16,7 @@
                                         aria-current="page" href="index.jsp">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="contacto.jsp"><b>Contacto</b></a>
                 </li>
-                <li class="nav-item"><a class="nav-link" href="listaCapacitaciones.jsp"><b>Capacitaciones</b></a>
+                <li class="nav-item"><a class="nav-link" href="/ejerciciosGrupal_war/servlet-capacitacion"><b>Capacitaciones</b></a>
                 </li>
                 <!--
                 <li class="nav-item dropdown">
