@@ -1,4 +1,5 @@
-<%--
+<%@ page import="java.util.List" %>
+<%@ page import="models.Capacitacion" %><%--
   Created by IntelliJ IDEA.
   User: Pablo
   Date: 13-07-2023
@@ -52,8 +53,10 @@
     <div class="row">
         <div class="col-md-12">
             <h1 class="mt-3" style='text-align: center'>Listado de Capacitaciones</h1>
+
+
             <div class="table-responsive">
-                <table id="tablaCapacitaciones" class="table" action="servlet-capacitacion" method="DELETE">
+                <table id="tablaCapacitaciones" class="table" >
                     <thead>
                     <tr>
                         <th scope="col">Codigo Capacitación</th>
@@ -69,15 +72,19 @@
                     </thead>
                     <tbody>
 
-                    <c:forEach items="${listaCapacitaciones}" var="capacitacion">
+                    <% List<Capacitacion> listaCapacitaciones  = (List<Capacitacion>) request.getAttribute("listaCapacitaciones");
+
+                        System.out.println(listaCapacitaciones.get(0).getIdentificador());
+                        for (Capacitacion capacitacion : listaCapacitaciones) {
+                    %>
                         <tr>
-                            <td>${capacitacion.identificador}</td>
-                            <td>${capacitacion.rut}</td>
-                            <td>${capacitacion.dia}</td>
-                            <td>${capacitacion.hora}</td>
-                            <td>${capacitacion.lugar}</td>
-                            <td>${capacitacion.duracion}</td>
-                            <td>${capacitacion.cantAsistentes}</td>
+                            <td><% out.println(capacitacion.getIdentificador()); %></td>
+                            <td><% out.println(capacitacion.getRut()); %></td>
+                            <td><% out.println(capacitacion.getDia()); %></td>
+                            <td><% out.println(capacitacion.getHora()); %></td>
+                            <td><% out.println(capacitacion.getLugar()); %></td>
+                            <td><% out.println(capacitacion.getDuracion()); %></td>
+                            <td><% out.println(capacitacion.getCantAsistentes()); %></td>
                             <td>
                                 <button type="button" class="btn btn-warning " data-bs-toggle="modal"
                                         data-bs-target="#editarCapacitacion">
@@ -87,10 +94,11 @@
 
                             <td>
                                 <input type="button" class="btn btn-danger " value="Eliminar"
-                                       onclick="eliminarCapacitacion('${capacitacion.identificador}')"/>
+                                       onclick="eliminarCapacitacion('')"/>
                             </td>
                         </tr>
-                    </c:forEach>
+                    <%
+                        }%>
 
                     </tbody>
                 </table>
@@ -120,14 +128,7 @@
 
 <jsp:include page='footer.jsp'/>
 
-<script>
-    const myModal = document.getElementById('myModal')
-    const myInput = document.getElementById('myInput')
 
-    myModal.addEventListener('shown.bs.modal', () => {
-        myInput.focus()
-    })
-</script>
 <script>
     $(document).ready(function () {
         // Inicializar DataTable
