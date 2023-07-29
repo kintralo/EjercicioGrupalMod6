@@ -35,6 +35,7 @@
 
 <jsp:include page='header.jsp'/>
 <jsp:include page='modalCapacitacion.jsp' flush="true"/>
+<jsp:include page='modalEditarCapacitacion.jsp' flush="true"/>
 
 <div class="container mt-3">
     <div class="row">
@@ -78,7 +79,8 @@
                             <td>${capacitacion.duracion}</td>
                             <td>${capacitacion.cantAsistentes}</td>
                             <td>
-                                <button type="button" class="btn btn-warning ">
+                                <button type="button" class="btn btn-warning " data-bs-toggle="modal"
+                                        data-bs-target="#editarCapacitacion">
                                     <b>Actualizar</b>
                                 </button>
                             </td>

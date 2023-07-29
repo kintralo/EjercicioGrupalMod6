@@ -1,7 +1,7 @@
 <%--
   Created by IntelliJ IDEA.
   User: Pablo
-  Date: 13-07-2023
+  Date: 28-07-2023
   Time: 20:56
   To change this template use File | Settings | File Templates.
 --%>
@@ -73,7 +73,5 @@
                required>
         <div class="invalid-feedback">Campo obligatorio</div>
     </div>
-
-
     <button type="submit" class="btn btn-primary form-control mt-5">Guardar</button>
 </form>
