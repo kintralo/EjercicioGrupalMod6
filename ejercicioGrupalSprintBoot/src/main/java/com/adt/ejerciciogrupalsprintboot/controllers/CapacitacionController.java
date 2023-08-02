@@ -9,6 +9,6 @@ public class CapacitacionController {
     @GetMapping("/listaCapacitaciones")
     public String  getCapacitaciones( Model model){
         model.addAttribute("identificador","102");
-                return"listaCapacitaciones";
+                return"listaCapacitacionesView";
     }
 }

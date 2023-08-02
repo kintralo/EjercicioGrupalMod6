@@ -1,4 +1,3 @@
-
 <%--
   Created by IntelliJ IDEA.
   User: Pablo
@@ -32,9 +31,9 @@
 <body>
 
 
-<jsp:include page='header.jsp'/>
-<jsp:include page='modalCapacitacion.jsp' flush="true"/>
-<jsp:include page='modalEditarCapacitacion.jsp' flush="true"/>
+<jsp:include page='headerView.jsp'/>
+<jsp:include page='modalCapacitacionView.jsp' flush="true"/>
+<jsp:include page='modalEditarCapacitacionView.jsp' flush="true"/>
 
 <div class="container mt-3">
     <div class="row">
@@ -54,7 +53,7 @@
 
 
             <div class="table-responsive">
-                <table id="tablaCapacitaciones"  class="table table-striped table-bordered display">
+                <table id="tablaCapacitaciones" class="table table-striped table-bordered display">
                     <thead>
                     <tr>
                         <th scope="col">Codigo Capacitación</th>
@@ -72,7 +71,13 @@
 
 
                     <tr>
-
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                         <td>
                             <button type="button" class="btn btn-warning " data-bs-toggle="modal"
                                     id="btnActualizarCapacitacion"
@@ -114,7 +119,7 @@
 </div>
 </br>
 
-<jsp:include page='footer.jsp'/>
+<jsp:include page='footerView.jsp'/>
 
 
 <script>
@@ -125,28 +130,27 @@
 
     $("body").on("click", "#btnActualizarCapacitacion", function (e) {
         e.preventDefault();
-       var codigo = $(this).parent().parent().children()[0];
+        var codigo = $(this).parent().parent().children()[0];
         //var codigo =  parseFloat($(this).parent().parent().children().eq(0).find('formEditIdentificador').val());
 
-        var rut =$(this).parent().parent().children()[1];
-        var dia=$(this).parent().parent().children()[2];
-        var hora=$(this).parent().parent().children()[3];
-        var lugar=$(this).parent().parent().children()[4];
-        var duracion=$(this).parent().parent().children()[5];
-        var asistentes=$(this).parent().parent().children()[6];
+        var rut = $(this).parent().parent().children()[1];
+        var dia = $(this).parent().parent().children()[2];
+        var hora = $(this).parent().parent().children()[3];
+        var lugar = $(this).parent().parent().children()[4];
+        var duracion = $(this).parent().parent().children()[5];
+        var asistentes = $(this).parent().parent().children()[6];
         //console.log($(codigo).text());
 
 
-
-        document.getElementById('formEditIdentificador').value=$(codigo).text();
-        document.getElementById('formEditRut').value=$(rut).text() ;
-       // var rut = parseFloat(document.getElementById('formEditRut').value);
+        document.getElementById('formEditIdentificador').value = $(codigo).text();
+        document.getElementById('formEditRut').value = $(rut).text();
+        // var rut = parseFloat(document.getElementById('formEditRut').value);
         //document.getElementById('formEditRut').value =  rut;
-        document.getElementById('formEditDia').value=$(dia).text() ;
-        document.getElementById('formEditLugar').value=$(lugar).text() ;
-        document.getElementById('formEditHora').value=$(hora).text() ;
-        document.getElementById('formEditDuracion').value=$(duracion).text() ;
-        document.getElementById('formEditAsistentes').value=$(asistentes).text() ;
+        document.getElementById('formEditDia').value = $(dia).text();
+        document.getElementById('formEditLugar').value = $(lugar).text();
+        document.getElementById('formEditHora').value = $(hora).text();
+        document.getElementById('formEditDuracion').value = $(duracion).text();
+        document.getElementById('formEditAsistentes').value = $(asistentes).text();
     })
 </script>
 

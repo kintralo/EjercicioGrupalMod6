@@ -25,8 +25,8 @@
                         <b>Capacitación</b>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="capacitacion.jsp">Crear Capacitación</a></li>
-                        <li><a class="dropdown-item" href="listaCapacitaciones.jsp">Listar Capacitaciones</a></li>
+                        <li><a class="dropdown-item" href="capacitacionView.jsp">Crear Capacitación</a></li>
+                        <li><a class="dropdown-item" href="listaCapacitacionesView.jsp">Listar Capacitaciones</a></li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>

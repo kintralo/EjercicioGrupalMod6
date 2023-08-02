@@ -21,7 +21,7 @@
 </head>
 <body>
 
-<jsp:include page='header.jsp'>
+<jsp:include page='headerView.jsp'>
     <jsp:param name='title' value='Welcome'/>
 </jsp:include>
 
@@ -57,7 +57,7 @@
 
 
 
-<jsp:include page='footer.jsp'/>
+<jsp:include page='footerView.jsp'/>
 
 <script
         src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"

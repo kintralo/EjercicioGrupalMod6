@@ -11,6 +11,6 @@ public class ContactoController {
         model.addAttribute("txtNombre","Pedro");
         model.addAttribute("txtEmail","pedro@gmail.com");
         model.addAttribute("txtMessage","Aquí un mensaje!");
-        return "contacto";
+        return "contactoView";
     }
 }
