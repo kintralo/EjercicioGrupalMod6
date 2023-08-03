@@ -6,10 +6,13 @@
   To change this template use File | Settings | File Templates.
 --%>
 
+<%@ page contentType="text/html; charset=UTF-8" %>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="ISO-8859-1">
+    <meta charset="UTF-8">
     <title>Contacto</title>
 
     <link
@@ -40,7 +43,7 @@
         <div class="col-md-12">
             <button type="button" class="btn btn-primary float-end" data-bs-toggle="modal"
                     data-bs-target="#crearCapacitacion">
-                Crear Capacitación
+                Crear CapacitaciÃ³n
             </button>
         </div>
     </div>
@@ -56,43 +59,44 @@
                 <table id="tablaCapacitaciones" class="table table-striped table-bordered display">
                     <thead>
                     <tr>
-                        <th scope="col">Codigo Capacitación</th>
+                        <th scope="col">CÃ³digo CapacitaciÃ³n</th>
                         <th scope="col">Rut</th>
-                        <th scope="col">Día</th>
+                        <th scope="col">Dia</th>
                         <th scope="col">Hora</th>
-                        <th scope="col">Lugar Capacitación</th>
-                        <th scope="col">Duración Capacitación</th>
+                        <th scope="col">Lugar CapacitaciÃ³n</th>
+                        <th scope="col">DuraciÃ³n CapacitaciÃ³n</th>
                         <th scope="col">Cantidad Asistentes</th>
-                        <th scope="col"><b>Botón</b></th>
-                        <th scope="col"><b>Botón</b></th>
+                        <th scope="col"><b>BotÃ³n</b></th>
+                        <th scope="col"><b>BotÃ³n</b></th>
                     </tr>
                     </thead>
                     <tbody>
 
+                    <c:forEach items="${capacitaciones}" var="capacitacion">
+                        <tr>
+                            <td>${capacitacion.identificador}</td>
+                            <td>${capacitacion.rut}</td>
+                            <td>${capacitacion.dia}</td>
+                            <td>${capacitacion.hora}</td>
+                            <td>${capacitacion.lugar}</td>
+                            <td>${capacitacion.duracion}</td>
+                            <td>${capacitacion.cantAsistentes}</td>
 
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>
-                            <button type="button" class="btn btn-warning " data-bs-toggle="modal"
-                                    id="btnActualizarCapacitacion"
-                                    data-bs-target="#editarCapacitacion">
-                                <b>Actualizar</b>
-                            </button>
-                        </td>
+                            <td>
+                                <button type="button" class="btn btn-warning " data-bs-toggle="modal"
+                                        id="btnActualizarCapacitacion"
+                                        data-bs-target="#editarCapacitacion">
+                                    <b>Actualizar</b>
+                                </button>
+                            </td>
 
-                        <td>
-                            <input type="button" class="btn btn-danger " value="Eliminar"
-                                   onclick="eliminarCapacitacion('')"/>
-                        </td>
-                    </tr>
+                            <td>
+                                <input type="button" class="btn btn-danger " value="Eliminar"
+                                       onclick="eliminarCapacitacion('')"/>
+                            </td>
+                        </tr>
 
-
+                    </c:forEach>
                     </tbody>
                 </table>
 
@@ -105,10 +109,10 @@
 
                 <script>
                     function eliminarCapacitacion(identificador) {
-                        if (confirm('¿Está seguro que desea eliminar la capacitación ' + identificador + '?')) {
-                            // hacer una llamada AJAX para eliminar la capacitación de la lista
-                            // por ejemplo, podríamos enviar una solicitud POST al servlet que maneja la eliminación de capacitaciones
-                            // después de eliminar la capacitación, volver a cargar la página para actualizar la tabla
+                        if (confirm('ï¿½Estï¿½ seguro que desea eliminar la capacitaciï¿½n ' + identificador + '?')) {
+                            // hacer una llamada AJAX para eliminar la capacitaciï¿½n de la lista
+                            // por ejemplo, podrï¿½amos enviar una solicitud POST al servlet que maneja la eliminaciï¿½n de capacitaciones
+                            // despuï¿½s de eliminar la capacitaciï¿½n, volver a cargar la pï¿½gina para actualizar la tabla
                             window.location.reload();
                         }
                     }

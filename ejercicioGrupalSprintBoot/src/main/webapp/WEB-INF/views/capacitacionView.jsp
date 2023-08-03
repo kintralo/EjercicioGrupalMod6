@@ -8,7 +8,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 
-<form action="" method="POST" class="was-validated">
+<form action="saveCapacitacion"method="POST" class="was-validated">
     <div class="form-group">
         <label for="lblCodigoCapacitacion" class="form-label">
             <b>Código Capacitación</b>
@@ -36,6 +36,15 @@
     </div>
 
     <div class="form-group">
+        <label for="lblHora" class="form-label">
+            <b>Hora:</b>
+        </label>
+        <input type="time" class="form-control" id="hora" value="11:30"
+               name="txtHora" required>
+        <div class="invalid-feedback">Campo obligatorio</div>
+    </div>
+
+    <div class="form-group">
         <label for="lblLugarCapacitacion" class="form-label">
             <b>Lugar de la capacitación</b>
         </label>
@@ -44,15 +53,6 @@
                   value="Aquí es la capacitación"
                   required>
                             </textarea>
-        <div class="invalid-feedback">Campo obligatorio</div>
-    </div>
-
-    <div class="form-group">
-        <label for="lblHora" class="form-label">
-            <b>Hora:</b>
-        </label>
-        <input type="time" class="form-control" id="hora" value="11:30"
-               name="txtHora" required>
         <div class="invalid-feedback">Campo obligatorio</div>
     </div>
 
