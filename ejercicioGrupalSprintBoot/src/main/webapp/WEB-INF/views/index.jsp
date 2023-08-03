@@ -17,13 +17,14 @@
     <h1 style='text-align: center'>${titulo}</h1>
     <div class="container">
         <div class="row">
+            <div class="col-md-12" >
 
 
             <p class="lead">Somos una empresa especializada en asesorías en
                 prevención de riesgos laborales. Ofrecemos una amplia gama de
                 servicios para garantizar un entorno de trabajo seguro para los
                 empleados, así como para prevenir accidentes.</p>
-
+            </div>
         </div>
     </div>
 </section>
@@ -81,12 +82,14 @@
 <section>
     <div class="container">
         <div class="row">
+            <div class="col-md-12">
             <h4 style='text-align: center'>Contáctanos</h4>
             <p class="lead">Si deseas obtener más información sobre nuestros
                 servicios o deseas solicitar una cotización, no dudes en
                 contactarnos.</p>
             <p class="lead">Teléfono: +XX XX XX XX XX</p>
             <p class="lead">Correo electrónico: info@empresaasesorias.cl</p>
+            </div>
         </div>
     </div>
 </section>
