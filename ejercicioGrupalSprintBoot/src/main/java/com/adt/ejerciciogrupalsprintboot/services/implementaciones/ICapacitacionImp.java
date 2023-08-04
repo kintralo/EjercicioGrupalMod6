@@ -12,6 +12,7 @@ import java.util.List;
  * Vannya Riffo
  * @version 1.0
  */
+
 public interface ICapacitacionImp {
     /**
      *

@@ -11,7 +11,7 @@
 
             <div class="modal-body">
                 <div class="col-md-12">
-                    <jsp:include page='capacitacionView.jsp'/>
+                    <jsp:include page='formularioCreacionCapacitacionView.jsp'/>
                 </div>
             </div>
             <div class="modal-footer">
