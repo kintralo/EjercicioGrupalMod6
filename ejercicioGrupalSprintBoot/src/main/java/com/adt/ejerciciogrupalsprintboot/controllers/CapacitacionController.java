@@ -4,7 +4,9 @@ import com.adt.ejerciciogrupalsprintboot.dto.CapacitacionDTO;
 import com.adt.ejerciciogrupalsprintboot.models.Capacitacion;
 import com.adt.ejerciciogrupalsprintboot.bd.Contenedor;
 import com.adt.ejerciciogrupalsprintboot.services.CapacitacionServices;
+import com.adt.ejerciciogrupalsprintboot.services.implementaciones.ICapacitacionImp;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.Banner;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -25,12 +27,12 @@ import java.util.List;
 public class CapacitacionController {
 
     @Autowired
-   private CapacitacionServices capacitacionServices;
+   private ICapacitacionImp capacitacionServices;
 
     @GetMapping("/listaCapacitaciones")
     public String getCapacitaciones(Model model) {
-        System.out.println("Aqui en el lista!");
-        System.out.println(Contenedor.getCapacitacionesArrayList().toString());
+        //System.out.println("Aqui en el lista!");
+        //System.out.println(Contenedor.getCapacitacionesArrayList().toString());
         List<CapacitacionDTO> capacitacionDTOS= capacitacionServices.listCapacitacion();
 
         model.addAttribute("listaCapacitaciones", capacitacionDTOS);
@@ -44,14 +46,17 @@ public class CapacitacionController {
                                      @RequestParam("txtHora") LocalTime hora,
                                      @RequestParam("txtLugarCapacitacion") String lugar,
                                      @RequestParam("txtDuracion") LocalTime duracion,
-                                     @RequestParam("txtAsistentes") int cantAsistentes
-                                     ) {
+                                     @RequestParam("txtAsistentes") int cantAsistentes,
+                                    Model model) {
         CapacitacionDTO capacitacion = new CapacitacionDTO(identificador, rut, dia, hora, lugar, duracion, cantAsistentes);
         ///System.out.println(capacitacionServices.createCapacitacion(capacitacion).toString());
         capacitacionServices.createCapacitacion(capacitacion);
        // System.out.println(Contenedor.getCapacitacionesArrayList().get(0).toString());
 
         //model.addAttribute("capacitaciones", capacitacionesArrayList);
+        List<CapacitacionDTO> capacitacionDTOS= capacitacionServices.listCapacitacion();
+
+        model.addAttribute("listaCapacitaciones", capacitacionDTOS);
         return "/listaCapacitacionesView";
     }
 

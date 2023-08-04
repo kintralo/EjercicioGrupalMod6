@@ -12,15 +12,7 @@ import java.util.ArrayList;
  * @version 1.0
  */
 public class Contenedor {
-    private static ArrayList<Capacitacion> capacitacionArrayList= new ArrayList<Capacitacion>();
-
-    /**
-     *
-     * @return capacitacionesArrayList
-     */
-    public static ArrayList<Capacitacion> getCapacitacionesArrayList() {
-        return capacitacionArrayList;
-    }
+    private static ArrayList<Capacitacion> capacitacionArrayList =new ArrayList<Capacitacion>();
 
     /**
      *
@@ -38,6 +30,13 @@ public class Contenedor {
         capacitacionArrayList.add(capacitacion);
 
         return true;
+    }
+    /**
+     *
+     * @return capacitacionesArrayList
+     */
+    public static ArrayList<Capacitacion> getCapacitacionesArrayList() {
+        return capacitacionArrayList;
     }
 
     /**
