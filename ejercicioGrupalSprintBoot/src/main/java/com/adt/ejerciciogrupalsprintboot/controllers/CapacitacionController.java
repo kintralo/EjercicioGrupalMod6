@@ -29,6 +29,7 @@ public class CapacitacionController {
 
     @GetMapping("/listaCapacitaciones")
     public String getCapacitaciones(Model model) {
+        System.out.println("Aqui en el lista!");
         System.out.println(Contenedor.getCapacitacionesArrayList().toString());
         List<CapacitacionDTO> capacitacionDTOS= capacitacionServices.listCapacitacion();
 

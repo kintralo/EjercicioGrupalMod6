@@ -55,7 +55,16 @@
         </div>
     </div>
 </div>
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-md-12">
+            <form action="listaCapacitaciones" method="GET" >
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">  Listar Capacitación</button>
+            </form>
 
+        </div>
+    </div>
+</div>
 <div class="container mt-3">
     <div class="row">
         <div class="col-md-12">
@@ -79,40 +88,31 @@
                     </thead>
                     <tbody>
 
-                    <%
-                        List<Capacitacion> capacitaciones = Contenedor.getCapacitacionesArrayList();
-                        for (Capacitacion capacitacion : capacitaciones) {
-                    %>
-                    <tr>
-                        <td><%= capacitacion.getIdentificador() %>
-                        </td>
-                        <td><%= capacitacion.getRut() %>
-                        </td>
-                        <td><%= capacitacion.getDia() %>
-                        </td>
-                        <td><%= capacitacion.getHora() %>
-                        </td>
-                        <td><%= capacitacion.getLugar() %>
-                        </td>
-                        <td><%= capacitacion.getDuracion() %>
-                        </td>
-                        <td><%= capacitacion.getCantAsistentes() %>
-                        </td>
-                        <td>
-                            <button type="button" class="btn btn-warning " data-bs-toggle="modal"
-                                    id="btnActualizarCapacitacion"
-                                    data-bs-target="#editarCapacitacion">
-                                <b>Actualizar</b>
-                            </button>
-                        </td>
+                    <c:forEach items="${listaCapacitaciones}" var="capacitacion">
+                        <tr>
+                            <td>${capacitacion.identificador}</td>
+                            <td>${capacitacion.rut}</td>
+                            <td>${capacitacion.dia}</td>
+                            <td>${capacitacion.hora}</td>
+                            <td>${capacitacion.lugar}</td>
+                            <td>${capacitacion.duracion}</td>
+                            <td>${capacitacion.cantAsistentes}</td>
 
-                        <td>
-                            <input type="button" class="btn btn-danger " value="Eliminar"
-                                   onclick="eliminarCapacitacion('')"/>
-                        </td>
-                    </tr>
+                            <td>
+                                <button type="button" class="btn btn-warning " data-bs-toggle="modal"
+                                        id="btnActualizarCapacitacion"
+                                        data-bs-target="#editarCapacitacion">
+                                    <b>Actualizar</b>
+                                </button>
+                            </td>
 
-                    <% }%>
+                            <td>
+                                <input type="button" class="btn btn-danger " value="Eliminar"
+                                       onclick="eliminarCapacitacion('')"/>
+                            </td>
+                        </tr>
+
+                    </c:forEach>
                     </tbody>
                 </table>
 
