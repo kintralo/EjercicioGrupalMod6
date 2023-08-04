@@ -1,9 +1,6 @@
 package com.adt.ejerciciogrupalsprintboot.models;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.time.LocalTime;
 /**
@@ -20,10 +17,11 @@ import java.time.LocalTime;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString
 /**
  * Creación Clase Capacitación
  */
-public class Capacitaciones {
+public class Capacitacion {
     //Definición de atributos
 
     private Long identificador;

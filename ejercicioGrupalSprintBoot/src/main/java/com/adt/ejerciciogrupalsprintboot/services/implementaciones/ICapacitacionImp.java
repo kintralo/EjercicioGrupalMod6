@@ -1,6 +1,7 @@
 package com.adt.ejerciciogrupalsprintboot.services.implementaciones;
 
-import com.adt.ejerciciogrupalsprintboot.models.Capacitaciones;
+import com.adt.ejerciciogrupalsprintboot.dto.CapacitacionDTO;
+
 
 import java.util.List;
 /**
@@ -12,9 +13,9 @@ import java.util.List;
  * @version 1.0
  */
 public interface ICapacitacionImp {
-    public Capacitaciones creatCapacitacion(Capacitaciones capacitaciones)throws Exception;
-    public Capacitaciones updateCapacitacion(long id, Capacitaciones capacitaciones)throws Exception;
-    public List<Capacitaciones> listCapacitaciones() throws Exception;
-    public Capacitaciones deleteCapacitacion(long id) throws Exception;
+    public CapacitacionDTO createCapacitacion(CapacitacionDTO capacitacionDTO);
+    public CapacitacionDTO updateCapacitacion(long id, CapacitacionDTO capacitacionDTO);
+    public List<CapacitacionDTO> listCapacitacion() ;
+    public CapacitacionDTO deleteCapacitacionDTO(long id) ;
 
 }

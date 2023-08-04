@@ -8,11 +8,13 @@
 
 <%@ page contentType="text/html; charset=UTF-8" %>
 
-<%@ page import="java.util.ArrayList" %>
+
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page import="com.adt.ejerciciogrupalsprintboot.models.Contenedor" %>
-<%@ page import="com.adt.ejerciciogrupalsprintboot.models.Capacitaciones" %>
+
+<%@ page import="com.adt.ejerciciogrupalsprintboot.models.Capacitacion" %>
+<%@ page import="com.adt.ejerciciogrupalsprintboot.bd.Contenedor" %>
 <%@ page import="java.util.List" %>
+<%@ page import="org.springframework.ui.Model" %>
 
 <!DOCTYPE html>
 <html>
@@ -78,8 +80,8 @@
                     <tbody>
 
                     <%
-                        List<Capacitaciones> capacitaciones = Contenedor.getCapacitacionesArrayList();
-                        for (Capacitaciones capacitacion : capacitaciones) {
+                        List<Capacitacion> capacitaciones = Contenedor.getCapacitacionesArrayList();
+                        for (Capacitacion capacitacion : capacitaciones) {
                     %>
                     <tr>
                         <td><%= capacitacion.getIdentificador() %>
