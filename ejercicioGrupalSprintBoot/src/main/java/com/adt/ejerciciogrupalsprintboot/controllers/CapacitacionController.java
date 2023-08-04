@@ -1,19 +1,24 @@
 package com.adt.ejerciciogrupalsprintboot.controllers;
 
 import com.adt.ejerciciogrupalsprintboot.models.Capacitaciones;
+import com.adt.ejerciciogrupalsprintboot.models.Contenedor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalTime;
 import java.util.ArrayList;
-
+/**
+ * @author  Juan Pablo Vásquez
+ * Ándres Tapia
+ * Victor Briso
+ * Sebastián Araya
+ * @version 1.0
+ */
 @Controller
 public class CapacitacionController {
     private ArrayList<Capacitaciones> capacitacionesArrayList = new ArrayList<Capacitaciones>();
-
+    private Contenedor contenedor= new Contenedor();
     @GetMapping("/listaCapacitaciones")
     public String getCapacitaciones(Model model) {
         model.addAttribute("identificador", "102");
@@ -38,13 +43,21 @@ public class CapacitacionController {
         capacitaciones.setCantAsistentes(cantAsistentes);
         Capacitaciones capacitacion = new Capacitaciones(identificador, rut, dia, hora, lugar, duracion, cantAsistentes);
         capacitacionesArrayList.add(capacitacion);
-        model.addAttribute("capacitaciones", capacitacionesArrayList);
+        contenedor.addCapacitacion(capacitacion);
+        //model.addAttribute("capacitaciones", capacitacionesArrayList);
         return "/listaCapacitacionesView";
     }
 
-    @PostMapping("/updateCapacitacione")
+    @PutMapping("/updateCapacitaciones")
     public String udpataCapacitacione(){
         return "/listaCapacitacionesView";
+    }
+
+    @RequestMapping("/listaCapacitaciones")
+    public String mostrarListaCapacitaciones(Model model) {
+    //contenedor.getCapacitacionesArrayList();
+        model.addAttribute("capacitaciones", contenedor.getCapacitacionesArrayList());
+        return "listaCapacitacionesView";
     }
 
 }

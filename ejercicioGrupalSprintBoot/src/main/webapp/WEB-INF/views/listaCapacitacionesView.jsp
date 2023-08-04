@@ -8,7 +8,12 @@
 
 <%@ page contentType="text/html; charset=UTF-8" %>
 
+<%@ page import="java.util.ArrayList" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page import="com.adt.ejerciciogrupalsprintboot.models.Contenedor" %>
+<%@ page import="com.adt.ejerciciogrupalsprintboot.models.Capacitaciones" %>
+<%@ page import="java.util.List" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -72,31 +77,40 @@
                     </thead>
                     <tbody>
 
-                    <c:forEach items="${capacitaciones}" var="capacitacion">
-                        <tr>
-                            <td>${capacitacion.identificador}</td>
-                            <td>${capacitacion.rut}</td>
-                            <td>${capacitacion.dia}</td>
-                            <td>${capacitacion.hora}</td>
-                            <td>${capacitacion.lugar}</td>
-                            <td>${capacitacion.duracion}</td>
-                            <td>${capacitacion.cantAsistentes}</td>
+                    <%
+                        List<Capacitaciones> capacitaciones = Contenedor.getCapacitacionesArrayList();
+                        for (Capacitaciones capacitacion : capacitaciones) {
+                    %>
+                    <tr>
+                        <td><%= capacitacion.getIdentificador() %>
+                        </td>
+                        <td><%= capacitacion.getRut() %>
+                        </td>
+                        <td><%= capacitacion.getDia() %>
+                        </td>
+                        <td><%= capacitacion.getHora() %>
+                        </td>
+                        <td><%= capacitacion.getLugar() %>
+                        </td>
+                        <td><%= capacitacion.getDuracion() %>
+                        </td>
+                        <td><%= capacitacion.getCantAsistentes() %>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-warning " data-bs-toggle="modal"
+                                    id="btnActualizarCapacitacion"
+                                    data-bs-target="#editarCapacitacion">
+                                <b>Actualizar</b>
+                            </button>
+                        </td>
 
-                            <td>
-                                <button type="button" class="btn btn-warning " data-bs-toggle="modal"
-                                        id="btnActualizarCapacitacion"
-                                        data-bs-target="#editarCapacitacion">
-                                    <b>Actualizar</b>
-                                </button>
-                            </td>
+                        <td>
+                            <input type="button" class="btn btn-danger " value="Eliminar"
+                                   onclick="eliminarCapacitacion('')"/>
+                        </td>
+                    </tr>
 
-                            <td>
-                                <input type="button" class="btn btn-danger " value="Eliminar"
-                                       onclick="eliminarCapacitacion('')"/>
-                            </td>
-                        </tr>
-
-                    </c:forEach>
+                    <% }%>
                     </tbody>
                 </table>
 
