@@ -1,8 +1,9 @@
 package com.adt.ejerciciogrupalsprintboot.models;
 
-
-import lombok.*;
-
+import lombok.Getter;
+import lombok.Setter;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalTime;
 /**
@@ -10,6 +11,7 @@ import java.time.LocalTime;
  * Ándres Tapia
  * Victor Briso
  * Sebastián Araya
+ * Vannya Riffo
  * @version 1.0
  */
 
