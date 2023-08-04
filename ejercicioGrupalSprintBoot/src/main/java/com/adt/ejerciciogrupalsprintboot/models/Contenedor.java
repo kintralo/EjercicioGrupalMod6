@@ -6,6 +6,7 @@ import java.util.ArrayList;
  * Ándres Tapia
  * Victor Briso
  * Sebastián Araya
+ * Vannya Riffo
  * @version 1.0
  */
 public class Contenedor {

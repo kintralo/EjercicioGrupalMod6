@@ -15,26 +15,7 @@ import java.util.List;
  */
 
 @Service
-public class CapacitacionServices implements ICapacitacionImp {
+public class CapacitacionServices {
 
 
-    @Override
-    public Capacitaciones creatCapacitacion(Capacitaciones capacitaciones) throws Exception {
-        return null;
-    }
-
-    @Override
-    public Capacitaciones updateCapacitacion(long id, Capacitaciones capacitaciones) throws Exception {
-        return null;
-    }
-
-    @Override
-    public List<Capacitaciones> listCapacitaciones() throws Exception {
-        return null;
-    }
-
-    @Override
-    public Capacitaciones deleteCapacitacion(long id) throws Exception {
-        return null;
-    }
 }
