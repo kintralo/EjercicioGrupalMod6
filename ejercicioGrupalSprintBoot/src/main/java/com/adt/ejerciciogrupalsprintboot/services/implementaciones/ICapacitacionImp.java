@@ -13,9 +13,32 @@ import java.util.List;
  * @version 1.0
  */
 public interface ICapacitacionImp {
+    /**
+     *
+     * @param capacitacionDTO
+     * @return
+     */
     public CapacitacionDTO createCapacitacion(CapacitacionDTO capacitacionDTO);
+
+    /**
+     *
+     * @param id
+     * @param capacitacionDTO
+     * @return
+     */
     public CapacitacionDTO updateCapacitacion(long id, CapacitacionDTO capacitacionDTO);
+
+    /**
+     *
+     * @return
+     */
     public List<CapacitacionDTO> listCapacitacion() ;
+
+    /**
+     *
+     * @param id
+     * @return
+     */
     public CapacitacionDTO deleteCapacitacionDTO(long id) ;
 
 }

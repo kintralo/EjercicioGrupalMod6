@@ -39,7 +39,7 @@
             if (request.getSession() != null) {
 
         %>
-        <form action="" method="POST" class="justify-content-end" role="search">
+        <form action="" method="" class="justify-content-end" role="search">
             <button class="btn btn-outline-success " type="submit">Cerrar Sesión</button>
         </form>
         <%

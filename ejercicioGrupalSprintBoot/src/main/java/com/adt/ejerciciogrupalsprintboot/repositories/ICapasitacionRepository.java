@@ -12,8 +12,17 @@ import java.util.List;
  * @version 1.0
  */
 public interface ICapasitacionRepository {
+    /**
+     *
+     * @return
+     */
     public List<Capacitacion> obtenerCapacitaciones();
 
+    /**
+     *
+     * @param capacitacion
+     * @return
+     */
     public boolean crearCapacitacion(Capacitacion capacitacion);
 
 }

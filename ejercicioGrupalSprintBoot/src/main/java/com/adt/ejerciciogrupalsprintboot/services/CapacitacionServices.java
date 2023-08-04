@@ -22,38 +22,68 @@ import java.util.List;
 @Service
 public class CapacitacionServices implements ICapacitacionImp {
 
-     @Autowired
+    @Autowired
     private CapacitacionDAO capacitacionDAO;
 
+    /**
+     *
+     * @param capacitacionDTO
+     * @return
+     */
     @Override
     public CapacitacionDTO createCapacitacion(CapacitacionDTO capacitacionDTO) {
-        Capacitacion capacitacion= new Capacitacion(
-                capacitacionDTO.getIdentificador(),capacitacionDTO.getRut(),
-                capacitacionDTO.getDia(),capacitacionDTO.getHora(),capacitacionDTO.getLugar(),capacitacionDTO.getDuracion(),
+        Capacitacion capacitacion = new Capacitacion(
+                capacitacionDTO.getIdentificador(),
+                capacitacionDTO.getRut(),
+                capacitacionDTO.getDia(),
+                capacitacionDTO.getHora(),
+                capacitacionDTO.getLugar(),
+                capacitacionDTO.getDuracion(),
                 capacitacionDTO.getCantAsistentes());
 
-         capacitacionDAO.crearCapacitacion(capacitacion);
+        capacitacionDAO.crearCapacitacion(capacitacion);
         return capacitacionDTO;
     }
 
+    /**
+     *
+     * @param id
+     * @param capacitacionDTO
+     * @return
+     */
     @Override
-    public CapacitacionDTO updateCapacitacion(long id, CapacitacionDTO capacitacionDTO)  {
+    public CapacitacionDTO updateCapacitacion(long id, CapacitacionDTO capacitacionDTO) {
         return null;
     }
 
+    /**
+     *
+     * @return capacitacionDTOS
+     */
     @Override
     public List<CapacitacionDTO> listCapacitacion() {
-        List<CapacitacionDTO> capacitacionDTOS= new ArrayList<CapacitacionDTO>();
-        for(Capacitacion capacitacion: capacitacionDAO.obtenerCapacitaciones() ){
-            capacitacionDTOS.add(new CapacitacionDTO( capacitacion.getIdentificador(),capacitacion.getRut(),
-                    capacitacion.getDia(),capacitacion.getHora(),capacitacion.getLugar(),capacitacion.getDuracion(),
-                    capacitacion.getCantAsistentes()));
+        List<CapacitacionDTO> capacitacionDTOS = new ArrayList<CapacitacionDTO>();
+        for (Capacitacion capacitacion : capacitacionDAO.obtenerCapacitaciones()) {
+            capacitacionDTOS.add(
+                    new CapacitacionDTO(
+                            capacitacion.getIdentificador(),
+                            capacitacion.getRut(),
+                            capacitacion.getDia(),
+                            capacitacion.getHora(),
+                            capacitacion.getLugar(),
+                            capacitacion.getDuracion(),
+                            capacitacion.getCantAsistentes()));
         }
         return capacitacionDTOS;
     }
 
+    /**
+     *
+     * @param id
+     * @return
+     */
     @Override
-    public CapacitacionDTO deleteCapacitacionDTO(long id)  {
+    public CapacitacionDTO deleteCapacitacionDTO(long id) {
         return null;
     }
 }
