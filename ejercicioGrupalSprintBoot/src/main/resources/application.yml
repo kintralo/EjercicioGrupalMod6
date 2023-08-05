@@ -4,7 +4,16 @@ spring:
       prefix: /WEB-INF/views/
       suffix: .jsp
 
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/prevencion_riesgos
+    username: root
+    password: Admin.123
 
+  jpa:
+    hibernate.ddl-auto: update
+    generate-ddl: true
+    show-sql: true
 
 
 
