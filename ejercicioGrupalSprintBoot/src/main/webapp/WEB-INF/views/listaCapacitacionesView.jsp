@@ -55,16 +55,7 @@
         </div>
     </div>
 </div>
-<div class="container mt-3">
-    <div class="row">
-        <div class="col-md-12">
-            <form action="listaCapacitaciones" method="GET" >
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">  Listar Capacitación</button>
-            </form>
 
-        </div>
-    </div>
-</div>
 <div class="container mt-3">
     <div class="row">
         <div class="col-md-12">
