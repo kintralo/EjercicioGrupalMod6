@@ -31,6 +31,15 @@ public class CapacitacionDAO implements ICapasitacionRepository{
      */
     @Override
     public boolean crearCapacitacion(Capacitacion capacitacion) {
+        System.out.println(capacitacion.getRut());
+        System.out.println(capacitacion.getIdentificador());
+        System.out.println(capacitacion.getDia());
+        System.out.println(capacitacion.getLugar());
+        System.out.println(capacitacion.getCantAsistentes());
+        System.out.println(capacitacion.getHora());
+        System.out.println(capacitacion.getDuracion());
+
+
         return Contenedor.addCapacitacion(capacitacion);
     }
 }
