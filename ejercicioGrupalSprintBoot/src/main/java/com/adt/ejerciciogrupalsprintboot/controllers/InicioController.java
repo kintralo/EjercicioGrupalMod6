@@ -3,7 +3,8 @@ package com.adt.ejerciciogrupalsprintboot.controllers;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import java.util.logging.*;
+import java.util.logging.Logger;
+import java.util.logging.Level;
 /**
  * @author  Juan Pablo Vásquez
  * Ándres Tapia
