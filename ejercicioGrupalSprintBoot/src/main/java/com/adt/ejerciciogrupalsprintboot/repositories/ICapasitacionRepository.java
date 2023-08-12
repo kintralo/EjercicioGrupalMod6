@@ -1,6 +1,7 @@
 package com.adt.ejerciciogrupalsprintboot.repositories;
 
 import com.adt.ejerciciogrupalsprintboot.models.Capacitacion;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 /**
@@ -11,18 +12,17 @@ import java.util.List;
  * Vannya Riffo
  * @version 1.0
  */
-public interface ICapasitacionRepository {
-    /**
-     *
-     * @return
-     */
-    public List<Capacitacion> obtenerCapacitaciones();
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
 
-    /**
-     *
-     * @param capacitacion
-     * @return
-     */
-    public boolean crearCapacitacion(Capacitacion capacitacion);
+@Repository
+public interface ICapasitacionRepository extends JpaRepository <Capacitacion, Long>{
+
+
+
+
+
 
 }

@@ -2,7 +2,7 @@ package com.adt.ejerciciogrupalsprintboot.services;
 
 import com.adt.ejerciciogrupalsprintboot.dto.CapacitacionDTO;
 import com.adt.ejerciciogrupalsprintboot.models.Capacitacion;
-import com.adt.ejerciciogrupalsprintboot.repositories.CapacitacionDAO;
+import com.adt.ejerciciogrupalsprintboot.repositories.ICapasitacionRepository;
 import com.adt.ejerciciogrupalsprintboot.services.implementaciones.ICapacitacionImp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,7 +23,7 @@ import java.util.List;
 public class CapacitacionServices implements ICapacitacionImp {
 
     @Autowired
-    private CapacitacionDAO capacitacionDAO;
+    private ICapasitacionRepository capacitacionDAO;
 
     /**
      *
@@ -41,7 +41,7 @@ public class CapacitacionServices implements ICapacitacionImp {
                 capacitacionDTO.getDuracion(),
                 capacitacionDTO.getCantAsistentes());
 
-        capacitacionDAO.crearCapacitacion(capacitacion);
+        capacitacionDAO.save(capacitacion);
         return capacitacionDTO;
     }
 
@@ -63,7 +63,7 @@ public class CapacitacionServices implements ICapacitacionImp {
     @Override
     public List<CapacitacionDTO> listCapacitacion() {
         List<CapacitacionDTO> capacitacionDTOS = new ArrayList<CapacitacionDTO>();
-        for (Capacitacion capacitacion : capacitacionDAO.obtenerCapacitaciones()) {
+        for (Capacitacion capacitacion : capacitacionDAO.findAll()) {
             capacitacionDTOS.add(
                     new CapacitacionDTO(
                             capacitacion.getIdentificador(),
