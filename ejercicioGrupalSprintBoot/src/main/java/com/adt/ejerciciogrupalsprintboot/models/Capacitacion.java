@@ -39,7 +39,7 @@ public class Capacitacion {
     //Definición de atributos
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    @Column(name = "identificador")
     private Long identificador;
     @Column(name = "rut", length = 20)
     private int rut;
