@@ -20,9 +20,4 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ICapasitacionRepository extends JpaRepository <Capacitacion, Long>{
 
-
-
-
-
-
 }
