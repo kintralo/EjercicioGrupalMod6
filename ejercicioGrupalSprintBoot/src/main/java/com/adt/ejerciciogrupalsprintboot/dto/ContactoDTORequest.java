@@ -21,14 +21,13 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class ContactoDTO {
-
-    private Long id_contacto;
+public class ContactoDTORequest {
 
     private String contacto_nombre;
 
     private String contacto_email;
 
     private String contacto_mensaje;
+
 
 }
