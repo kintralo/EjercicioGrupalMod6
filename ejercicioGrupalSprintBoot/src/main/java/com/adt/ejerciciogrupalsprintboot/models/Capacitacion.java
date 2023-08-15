@@ -42,7 +42,7 @@ public class Capacitacion {
     //@GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "identificador")
     private Long identificador;
-    @Column(name = "rut", length = 20)
+    @Column(name = "rut")
     private Integer rut;
     @Column(name = "dia")
     private String dia;
