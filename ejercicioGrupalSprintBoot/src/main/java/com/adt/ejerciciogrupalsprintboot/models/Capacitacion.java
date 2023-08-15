@@ -25,24 +25,25 @@ import java.time.LocalTime;
  * @version 1.0
  */
 
-@Entity
-@Table(name = "capacitaciones")
+
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
+@Entity
+@Table(name = "capacitaciones")
 /**
  * Creación Clase Capacitación
  */
 public class Capacitacion {
     //Definición de atributos
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    //@GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "identificador")
     private Long identificador;
     @Column(name = "rut", length = 20)
-    private int rut;
+    private Integer rut;
     @Column(name = "dia")
     private String dia;
     @Column(name = "hora")
@@ -51,8 +52,8 @@ public class Capacitacion {
     private String lugar;
     @Column(name = "duracion")
     private LocalTime duracion;
-    @Column(name = "cantAsistentes", length = 15)
-    private int cantAsistentes;
+    @Column(name = "cantAsistentes")
+    private Integer cantAsistentes;
 
 
 }
