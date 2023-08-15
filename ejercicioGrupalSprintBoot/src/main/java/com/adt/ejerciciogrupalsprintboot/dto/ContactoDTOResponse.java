@@ -5,7 +5,6 @@ import lombok.Setter;
 import lombok.AllArgsConstructor;
 import lombok.ToString;
 
-
 /**
  * @author  Juan Pablo Vásquez
  * Ándres Tapia
@@ -20,6 +19,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
+
 public class ContactoDTOResponse {
 
     private Long id_contacto;
