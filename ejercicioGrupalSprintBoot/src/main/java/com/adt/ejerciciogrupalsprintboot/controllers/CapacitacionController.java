@@ -1,18 +1,13 @@
 package com.adt.ejerciciogrupalsprintboot.controllers;
 
 import com.adt.ejerciciogrupalsprintboot.dto.CapacitacionDTO;
-import com.adt.ejerciciogrupalsprintboot.models.Capacitacion;
-import com.adt.ejerciciogrupalsprintboot.bd.Contenedor;
-import com.adt.ejerciciogrupalsprintboot.services.CapacitacionServices;
 import com.adt.ejerciciogrupalsprintboot.services.implementaciones.ICapacitacionImp;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.Banner;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalTime;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
