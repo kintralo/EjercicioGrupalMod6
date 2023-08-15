@@ -35,14 +35,22 @@ public class ContactoController {
         ContactoDTORequest contactoDTORequest = new ContactoDTORequest(contacto_nombre,contacto_email,contacto_descripcion);
         serviceContactoImp.createContacto(contactoDTORequest);
         List<ContactoDTOResponse> contactoDTORequests = serviceContactoImp.listContacto();
+        System.out.println(contactoDTORequests.size());
+        model.addAttribute("listaContacto", contactoDTORequests);
         return "/listaContactoView";
 
     }
-    @GetMapping("/contacto")
+
+    @GetMapping("/listaContacto")
     public String contacto(Model model) throws Exception {
         List<ContactoDTOResponse> contactoDTORequests = serviceContactoImp.listContacto();
+        model.addAttribute("listaContacto", contactoDTORequests);
         return "/listaContactoView";
     }
 
+    @GetMapping("/contacto")
+    public String contactoView() throws Exception {
+        return "/contactoView";
+    }
 
 }
