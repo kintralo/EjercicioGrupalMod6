@@ -1,6 +1,7 @@
 package com.adt.ejerciciogrupalsprintboot.services;
 
-import com.adt.ejerciciogrupalsprintboot.dto.ContactoDTO;
+import com.adt.ejerciciogrupalsprintboot.dto.ContactoDTORequest;
+import com.adt.ejerciciogrupalsprintboot.dto.ContactoDTOResponse;
 import com.adt.ejerciciogrupalsprintboot.models.Contacto;
 import com.adt.ejerciciogrupalsprintboot.repositories.IContactoRepository;
 import com.adt.ejerciciogrupalsprintboot.services.implementaciones.IContactoImp;
@@ -24,20 +25,20 @@ public class ContactoServices implements IContactoImp {
 
     /**
      *
-     * @param contactoDTO
+     * @param contactoDTORequest
      * @return
      * @throws Exception
      */
     @Override
-    public ContactoDTO createContacto(ContactoDTO contactoDTO) throws Exception {
+    public ContactoDTORequest createContacto(ContactoDTORequest contactoDTORequest) throws Exception {
         Contacto contacto= new Contacto(
-                contactoDTO.getId_contacto(),
-                contactoDTO.getContacto_nombre(),
-                contactoDTO.getContacto_email(),
-                contactoDTO.getContacto_mensaje()
+                null,
+                contactoDTORequest.getContacto_nombre(),
+                contactoDTORequest.getContacto_email(),
+                contactoDTORequest.getContacto_mensaje()
         );
         iContactoRepository.save(contacto);
-         return contactoDTO;
+         return contactoDTORequest;
     }
 
     /**
@@ -46,11 +47,11 @@ public class ContactoServices implements IContactoImp {
      * @throws Exception
      */
     @Override
-    public List<ContactoDTO> listContacto() throws Exception {
-        List<ContactoDTO> contactoDTOS= new ArrayList<ContactoDTO>();
+    public List<ContactoDTOResponse> listContacto() throws Exception {
+        List<ContactoDTOResponse> contactoDTOResponses = new ArrayList<ContactoDTOResponse>();
         for (Contacto contacto: iContactoRepository.findAll()){
-            contactoDTOS.add(
-                    new ContactoDTO(
+            contactoDTOResponses.add(
+                    new ContactoDTOResponse(
                             contacto.getId_contacto(),
                             contacto.getContacto_nombre(),
                             contacto.getContacto_email(),
@@ -58,6 +59,6 @@ public class ContactoServices implements IContactoImp {
                     )
             );
         }
-        return contactoDTOS;
+        return contactoDTOResponses;
     }
 }
