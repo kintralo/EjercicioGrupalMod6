@@ -1,7 +1,7 @@
 <%--
   Created by IntelliJ IDEA.
   User: Pablo
-  Date: 13-07-2023
+  Date: 14-08-2023
   Time: 20:54
   To change this template use File | Settings | File Templates.
 --%>
@@ -29,7 +29,7 @@
     Contacto</h1>
 <div class="container">
     <div class="row">
-        <form action="servlet-contacto" method="POST">
+        <form action="saveContacto" method="POST" class="was-validated">
 
             <div class="form-group">
                 <label for="lblNombre">Nombre: </label>
