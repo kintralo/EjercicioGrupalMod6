@@ -14,25 +14,19 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item"><a class="nav-link active"
                                         aria-current="page" href="/">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="contacto"><b>Contacto</b></a>
-                </li>
                 <li class="nav-item"><a class="nav-link" href="listaCapacitaciones"><b>Capacitaciones</b></a>
                 </li>
-                <!--
+
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                        aria-expanded="false">
-                        <b>Capacitación</b>
+                        <b>Contacto</b>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="formularioCreacionCapacitacionView.jsp">Crear Capacitación</a></li>
-                        <li><a class="dropdown-item" href="listaCapacitacionesView.jsp">Listar Capacitaciones</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        <li><a class="dropdown-item" href="contacto">Crear contacto</a></li>
+                        <li><a class="dropdown-item" href="listaContacto">Listar Contacto</a></li>
                     </ul>
-                </li>-->
+                </li>
             </ul>
         <%
 
