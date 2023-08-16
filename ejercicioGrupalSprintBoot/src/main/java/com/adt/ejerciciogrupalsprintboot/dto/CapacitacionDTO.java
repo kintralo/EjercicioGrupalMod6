@@ -3,7 +3,6 @@ package com.adt.ejerciciogrupalsprintboot.dto;
 import lombok.NoArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
-import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
 import lombok.ToString;
 
