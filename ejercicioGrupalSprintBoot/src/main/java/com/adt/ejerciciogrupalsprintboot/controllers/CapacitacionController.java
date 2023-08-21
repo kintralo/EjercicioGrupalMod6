@@ -52,7 +52,7 @@ public class CapacitacionController {
         List<CapacitacionDTO> capacitacionDTOS= capacitacionServices.listCapacitacion();
 
         model.addAttribute("listaCapacitaciones", capacitacionDTOS);
-        return "/listaCapacitacionesView";
+        return "listaCapacitacionesView";
     }
 
     @PutMapping("/updateCapacitaciones")

@@ -27,23 +27,23 @@
                         <li><a class="dropdown-item" href="listaContacto">Listar Contacto</a></li>
                     </ul>
                 </li>
+                <%
+
+                    if (request.getSession() != null) {
+
+                %>
+                <li class="nav-item"><a class="btn btn-outline-danger float-end" href="/logout"><b>Cerrar Sesión</b></a>
+                </li>
+                <%
+                } else {%>
+                <button type="button" class="btn btn-primary float-end" data-bs-toggle="modal" data-bs-target="#loginModal">
+                    Login
+                </button>
+                <%
+                    }
+                %>
             </ul>
-        <%
 
-            if (request.getSession() != null) {
-
-        %>
-        <form action="" method="" class="justify-content-end" role="search">
-            <button class="btn btn-outline-success " type="submit">Cerrar Sesión</button>
-        </form>
-        <%
-        } else {%>
-        <button type="button" class="btn btn-primary float-end" data-bs-toggle="modal" data-bs-target="#loginModal">
-            Login
-        </button>
-        <%
-            }
-        %>
     </div>
 </nav>
 

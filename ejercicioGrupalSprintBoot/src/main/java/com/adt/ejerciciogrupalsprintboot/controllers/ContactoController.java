@@ -37,7 +37,7 @@ public class ContactoController {
         List<ContactoDTOResponse> contactoDTORequests = serviceContactoImp.listContacto();
         System.out.println(contactoDTORequests.size());
         model.addAttribute("listaContacto", contactoDTORequests);
-        return "/listaContactoView";
+        return "listaContactoView";
 
     }
 
@@ -45,12 +45,13 @@ public class ContactoController {
     public String contacto(Model model) throws Exception {
         List<ContactoDTOResponse> contactoDTORequests = serviceContactoImp.listContacto();
         model.addAttribute("listaContacto", contactoDTORequests);
-        return "/listaContactoView";
+        return "listaContactoView";
     }
 
     @GetMapping("/contacto")
     public String contactoView() throws Exception {
-        return "/contactoView";
+        return "contactoView";
     }
+
 
 }
