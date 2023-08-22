@@ -10,12 +10,17 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
+    private final static Logger LOG_MONITOREO = Logger.getLogger("com.adt.ejerciciogrupalsprintboot.controllers");
     @Override
     protected void configure(HttpSecurity http) throws Exception {
+        LOG_MONITOREO.log(Level.INFO, "Que pasa en el login");
         http.csrf().disable();
         http.authorizeHttpRequests().anyRequest().permitAll();
         http.authorizeRequests()
@@ -26,9 +31,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
                 .and().formLogin()
                 .and()
-                .logout()
-                .logoutUrl("logout")
-                .logoutSuccessUrl("/");
+                .logout(logout -> logout
+                        .logoutUrl("/logout")
+                        .logoutSuccessUrl("/home")
+                        //.logoutSuccessHandler()
+                        .invalidateHttpSession(true)
+                        //.addLogoutHandler()
+                        .deleteCookies()
+                );
         //http.authorizeRequests().dispatcherTypeMatchers(HttpMethod.valueOf("/index")).permitAll();
     }
 

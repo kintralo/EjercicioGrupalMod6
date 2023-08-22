@@ -32,8 +32,10 @@
                     if (request.getSession() != null) {
 
                 %>
-                <li class="nav-item"><a class="btn btn-outline-danger float-end" href="/logout"><b>Cerrar Sesión</b></a>
-                </li>
+                <form method="post" action="/logout">
+                    <button class="btn btn-outline-danger float-end">Cerrar Sesión</button>
+                </form>
+
                 <%
                 } else {%>
                 <button type="button" class="btn btn-primary float-end" data-bs-toggle="modal" data-bs-target="#loginModal">
