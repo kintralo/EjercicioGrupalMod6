@@ -2,6 +2,7 @@ package com.adt.ejerciciogrupalsprintboot.services.implementaciones;
 
 import com.adt.ejerciciogrupalsprintboot.dto.ContactoDTORequest;
 import com.adt.ejerciciogrupalsprintboot.dto.ContactoDTOResponse;
+import com.adt.ejerciciogrupalsprintboot.dto.UsuariosDTOResponse;
 
 import java.util.List;
 
@@ -18,5 +19,6 @@ public interface IContactoImp {
 
     public ContactoDTORequest createContacto(ContactoDTORequest contactoDTORequest) throws Exception;
     public List<ContactoDTOResponse> listContacto()throws Exception;
+
 
 }
