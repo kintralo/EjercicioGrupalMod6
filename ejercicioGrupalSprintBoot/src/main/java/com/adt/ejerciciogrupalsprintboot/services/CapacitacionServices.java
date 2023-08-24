@@ -31,7 +31,7 @@ public class CapacitacionServices implements ICapacitacionImp {
      * @return
      */
     @Override
-    public CapacitacionDTO createCapacitacion(CapacitacionDTO capacitacionDTO) {
+    public List<CapacitacionDTO> createCapacitacion(CapacitacionDTO capacitacionDTO) {
         Capacitacion capacitacion = new Capacitacion(
                 capacitacionDTO.getIdentificador(),
                 capacitacionDTO.getRut(),
@@ -42,7 +42,8 @@ public class CapacitacionServices implements ICapacitacionImp {
                 capacitacionDTO.getCantAsistentes());
 
         capacitacionDAO.save(capacitacion);
-        return capacitacionDTO;
+        List<CapacitacionDTO> listaCapacitaciones = this.listCapacitacion();
+        return listaCapacitaciones;
     }
 
     /**

@@ -19,7 +19,7 @@ public interface ICapacitacionImp {
      * @param capacitacionDTO
      * @return
      */
-    public CapacitacionDTO createCapacitacion(CapacitacionDTO capacitacionDTO);
+    public List<CapacitacionDTO> createCapacitacion(CapacitacionDTO capacitacionDTO);
 
     /**
      *
