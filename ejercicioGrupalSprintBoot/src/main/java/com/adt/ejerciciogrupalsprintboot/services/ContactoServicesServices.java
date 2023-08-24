@@ -4,7 +4,7 @@ import com.adt.ejerciciogrupalsprintboot.dto.ContactoDTORequest;
 import com.adt.ejerciciogrupalsprintboot.dto.ContactoDTOResponse;
 import com.adt.ejerciciogrupalsprintboot.models.Contacto;
 import com.adt.ejerciciogrupalsprintboot.repositories.IContactoRepository;
-import com.adt.ejerciciogrupalsprintboot.services.implementaciones.IContactoImp;
+import com.adt.ejerciciogrupalsprintboot.services.implementaciones.IContactoServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,7 +19,7 @@ import java.util.List;
  * @version 1.0
  */
 @Service
-public class ContactoServices implements IContactoImp {
+public class ContactoServicesServices implements IContactoServices {
     @Autowired
     private IContactoRepository iContactoRepository;
 

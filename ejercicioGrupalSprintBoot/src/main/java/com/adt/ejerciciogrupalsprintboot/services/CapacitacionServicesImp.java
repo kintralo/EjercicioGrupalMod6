@@ -3,7 +3,7 @@ package com.adt.ejerciciogrupalsprintboot.services;
 import com.adt.ejerciciogrupalsprintboot.dto.CapacitacionDTO;
 import com.adt.ejerciciogrupalsprintboot.models.Capacitacion;
 import com.adt.ejerciciogrupalsprintboot.repositories.ICapasitacionRepository;
-import com.adt.ejerciciogrupalsprintboot.services.implementaciones.ICapacitacionImp;
+import com.adt.ejerciciogrupalsprintboot.services.implementaciones.ICapacitacionServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,7 +20,7 @@ import java.util.List;
  */
 
 @Service
-public class CapacitacionServices implements ICapacitacionImp {
+public class CapacitacionServicesImp implements ICapacitacionServices {
 
     @Autowired
     private ICapasitacionRepository capacitacionDAO;

@@ -1,8 +1,8 @@
 package com.adt.ejerciciogrupalsprintboot.restController;
 import com.adt.ejerciciogrupalsprintboot.dto.CapacitacionDTO;
 import com.adt.ejerciciogrupalsprintboot.dto.UsuariosDTOResponse;
-import com.adt.ejerciciogrupalsprintboot.services.implementaciones.ICapacitacionImp;
-import com.adt.ejerciciogrupalsprintboot.services.implementaciones.IUsuariosImp;
+import com.adt.ejerciciogrupalsprintboot.services.implementaciones.ICapacitacionServices;
+import com.adt.ejerciciogrupalsprintboot.services.implementaciones.IUsuariosServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,20 +16,20 @@ import java.util.logging.Logger;
 public class CapacitacionRestController {
 
     @Autowired
-    private IUsuariosImp IUsuariosImp;
+    private IUsuariosServices IUsuariosServices;
     @Autowired
-    private ICapacitacionImp iCapacitacionImp;
+    private ICapacitacionServices iCapacitacionServicesImp;
     private final static Logger LOG_MONITOREO = Logger.getLogger("com.adt.ejerciciogrupalsprintboot.controllers");
     @GetMapping("/listaUsuarios")
     public ResponseEntity<List<UsuariosDTOResponse>> getUsuarios() throws Exception {
-        List<UsuariosDTOResponse> objetousuarios = IUsuariosImp.usuariosDTOResponseList();
+        List<UsuariosDTOResponse> objetousuarios = IUsuariosServices.usuariosDTOResponseList();
         System.out.println(objetousuarios);
         return new ResponseEntity<>(objetousuarios,HttpStatus.OK);
     }
 
     @GetMapping("/listaCapacitacionesRest")
     public ResponseEntity<List<CapacitacionDTO>> getCapacitaciones() throws Exception {
-        List<CapacitacionDTO> getCapacitaciones = iCapacitacionImp.listCapacitacion();
+        List<CapacitacionDTO> getCapacitaciones = iCapacitacionServicesImp.listCapacitacion();
         System.out.println(getCapacitaciones);
         return new ResponseEntity<>(getCapacitaciones,HttpStatus.OK);
     }
@@ -43,7 +43,7 @@ public class CapacitacionRestController {
                 capacitacion.getLugar(),
                 capacitacion.getDuracion(),
                 capacitacion.getCantAsistentes());
-        List<CapacitacionDTO> listaCap = iCapacitacionImp.createCapacitacion(add);
+        List<CapacitacionDTO> listaCap = iCapacitacionServicesImp.createCapacitacion(add);
         return new ResponseEntity<>(listaCap,HttpStatus.OK);
     }
 
