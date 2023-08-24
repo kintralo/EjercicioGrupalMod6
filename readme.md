@@ -12,6 +12,8 @@ MVC.
 - Victor Briso
 - Sebastián Araya
 
+## Variables de Entorno
+DB_USER=root;DB_PASS=;DB_HOST=localhost;DB_SCHEMA=prevencion_riesgos
 ## Requisitos Previos
 Lista de tecnologías pre-requisitos mínimos para que el proyecto funcione locamente:
 - IntelliJ

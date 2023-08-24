@@ -1,7 +1,7 @@
 package com.adt.ejerciciogrupalsprintboot.controllers;
 
 import com.adt.ejerciciogrupalsprintboot.dto.CapacitacionDTO;
-import com.adt.ejerciciogrupalsprintboot.services.implementaciones.ICapacitacionImp;
+import com.adt.ejerciciogrupalsprintboot.services.implementaciones.ICapacitacionServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,7 +22,7 @@ import java.util.List;
 public class CapacitacionController {
 
     @Autowired
-   private ICapacitacionImp capacitacionServices;
+   private ICapacitacionServices capacitacionServices;
 
     @GetMapping("/listaCapacitaciones")
     public String getCapacitaciones(Model model) {

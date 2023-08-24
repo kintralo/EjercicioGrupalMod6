@@ -2,7 +2,7 @@ package com.adt.ejerciciogrupalsprintboot.controllers;
 
 import com.adt.ejerciciogrupalsprintboot.dto.ContactoDTORequest;
 import com.adt.ejerciciogrupalsprintboot.dto.ContactoDTOResponse;
-import com.adt.ejerciciogrupalsprintboot.services.implementaciones.IContactoImp;
+import com.adt.ejerciciogrupalsprintboot.services.implementaciones.IContactoServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,7 +25,7 @@ import java.util.List;
 @Controller
 public class ContactoController {
     @Autowired
-    private IContactoImp serviceContactoImp;
+    private IContactoServices serviceContactoImp;
 
     @PostMapping("/saveContacto")
     public String createContacto(@RequestParam("txtNombre")String contacto_nombre,

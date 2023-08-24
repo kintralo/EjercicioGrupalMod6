@@ -3,8 +3,7 @@ package com.adt.ejerciciogrupalsprintboot.services;
 import com.adt.ejerciciogrupalsprintboot.dto.UsuariosDTOResponse;
 import com.adt.ejerciciogrupalsprintboot.models.Usuarios;
 import com.adt.ejerciciogrupalsprintboot.repositories.IUsuariosRepository;
-import com.adt.ejerciciogrupalsprintboot.services.implementaciones.IContactoImp;
-import com.adt.ejerciciogrupalsprintboot.services.implementaciones.IUsuariosImp;
+import com.adt.ejerciciogrupalsprintboot.services.implementaciones.IUsuariosServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,7 +22,7 @@ import java.util.List;
  * @version 1.0
  */
 @Service
-public class UsuariosServices implements IUsuariosImp {
+public class UsuariosServicesServices implements IUsuariosServices {
     @Autowired
     private IUsuariosRepository IUsuarioRepository;
     @Override
