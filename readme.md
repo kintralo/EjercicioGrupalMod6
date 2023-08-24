@@ -22,4 +22,4 @@ Lista de tecnologías pre-requisitos mínimos para que el proyecto funcione loca
 - Apache Tomcat 10.0.27
 
 #### README UPDATE
-* ***Juan Pablo Váquez*** - *27-07-2023*
+* ***Juan Pablo Váquez*** - *24-08-2023*
