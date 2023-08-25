@@ -4,7 +4,11 @@ import com.adt.ejerciciogrupalsprintboot.models.Usuarios;
 import jakarta.persistence.Column;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import lombok.*;
+import lombok.NoArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.AllArgsConstructor;
+import lombok.ToString;
 
 import java.util.Date;
 @Getter
