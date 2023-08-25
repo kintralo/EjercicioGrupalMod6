@@ -15,8 +15,20 @@ import java.util.List;
  */
 
 public interface IContactoServices {
+    /**
+     *
+     * @param contactoDTORequest
+     * @return
+     * @throws Exception
+     */
 
     public ContactoDTORequest createContacto(ContactoDTORequest contactoDTORequest) throws Exception;
+
+    /**
+     *
+     * @return
+     * @throws Exception
+     */
     public List<ContactoDTOResponse> listContacto()throws Exception;
 
 
