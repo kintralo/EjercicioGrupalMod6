@@ -16,11 +16,11 @@ import java.util.List;
 public interface IPagoServices {
     /**
      *
-     * @param pagoDTOResponse
+     * @param pagoDTORequest
      * @return
      * @throws Exception
      */
-    public PagoDTORequest createPago(PagoDTOResponse pagoDTOResponse) throws Exception;
+    public PagoDTORequest createPago(PagoDTORequest pagoDTORequest) throws Exception;
 
     /**
      *
