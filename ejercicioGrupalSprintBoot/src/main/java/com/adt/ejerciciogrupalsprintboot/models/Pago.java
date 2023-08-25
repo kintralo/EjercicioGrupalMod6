@@ -48,7 +48,7 @@ public class Pago {
     @Column(name = "cliente_id")
     private Usuarios usuarios;
 
-    @Column(name = "id_pago")
+    @Column(name = "monto")
     private Double monto;
     @Column(name = "fecha_pago")
     private Date fecha_pago;
