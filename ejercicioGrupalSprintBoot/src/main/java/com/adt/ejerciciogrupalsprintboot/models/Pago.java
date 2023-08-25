@@ -50,6 +50,7 @@ public class Pago {
 
     @Column(name = "monto")
     private Double monto;
+
     @Column(name = "fecha_pago")
     private Date fecha_pago;
 
