@@ -7,7 +7,6 @@ import lombok.Setter;
 import lombok.AllArgsConstructor;
 import lombok.ToString;
 
-import java.time.LocalTime;
 
 /**
  * @author  Juan Pablo Vásquez
