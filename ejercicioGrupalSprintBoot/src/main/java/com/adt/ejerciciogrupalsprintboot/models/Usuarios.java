@@ -1,16 +1,13 @@
 package com.adt.ejerciciogrupalsprintboot.models;
-import jakarta.persistence.Id;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
+import jakarta.persistence.*;
 
 import lombok.NoArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.AllArgsConstructor;
 import lombok.ToString;
+
+import java.util.List;
 
 /**
  * @author Juan Pablo Vásquez
@@ -44,4 +41,10 @@ public class Usuarios {
 
     @Column(name = "rut", length = 12)
     private String rut;
+
+    @Column(name = "contrasenya", length = 12)
+    private String contrasenya;
+
+    @OneToMany(mappedBy = "pago", cascade = CascadeType.ALL)
+    List<Pago> pagoList;
 }
