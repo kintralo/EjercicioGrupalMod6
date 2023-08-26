@@ -23,6 +23,7 @@ import java.util.List;
  */
 @Service
 public class PagoServicesImp implements IPagoServices {
+
     @Autowired
     private IPagoRepository iPagoRepository;
 

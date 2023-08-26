@@ -41,6 +41,15 @@ public class PagoController {
                 new CustomDateEditor(new SimpleDateFormat("dd/MM/yyyy"), true, 10));
     }
 
+    /**
+     *
+     * @param usuario
+     * @param monto
+     * @param fecha_pago
+     * @param model
+     * @return
+     * @throws Exception
+     */
     @PostMapping("/savePago")
     public String createPago(@Param("txtUdUsuario") Integer usuario,
                              @RequestParam("txtMonto") Double monto,
