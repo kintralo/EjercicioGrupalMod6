@@ -46,7 +46,7 @@ public class PagoController {
         iPagoServices.createPago(pagoDTORequest);
         List<PagoDTOResponse> pagoDTOResponses = iPagoServices.listPago();
         model.addAttribute("listaPago", pagoDTOResponses);
-        return "/listaPagosView";
+        return "listaPagoView";
     }
 
     /**
@@ -57,7 +57,8 @@ public class PagoController {
     @GetMapping("/listaPagos")
     public String getPagos(Model model) throws Exception {
         List<PagoDTOResponse> pagoDTOResponses = iPagoServices.listPago();
+        System.out.println(pagoDTOResponses);
         model.addAttribute("listaPago", pagoDTOResponses);
-        return "/listaPagosView";
+        return "listaPagoView";
     }
 }
