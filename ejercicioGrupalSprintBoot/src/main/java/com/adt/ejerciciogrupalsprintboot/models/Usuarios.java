@@ -52,6 +52,6 @@ public class Usuarios {
     @Column(name = "contrasenya", length = 12)
     private String contrasenya;
 
-    @OneToMany(mappedBy = "pago", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
     private List<Pago> pagoList;
 }
