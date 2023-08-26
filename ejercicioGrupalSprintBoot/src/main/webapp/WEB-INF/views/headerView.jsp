@@ -1,3 +1,10 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: Pablo
+  Date: 25-08-2023
+  Time: 20:54
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
          pageEncoding="ISO-8859-1" %>
 
@@ -16,6 +23,8 @@
                                         aria-current="page" href="/">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="listaCapacitaciones"><b>Capacitaciones</b></a>
                 </li>
+                <li class="nav-item"><a class="nav-link" href="listaCapacitaciones"><b>Pagos</b></a>
+                </li>
 
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -27,25 +36,22 @@
                         <li><a class="dropdown-item" href="listaContacto">Listar Contacto</a></li>
                     </ul>
                 </li>
-                <%
-
-                    if (request.getSession() != null) {
-
-                %>
-                <form method="post" action="/logout">
-                    <button class="btn btn-outline-danger float-end">Cerrar Sesión</button>
-                </form>
-
-                <%
-                } else {%>
-                <button type="button" class="btn btn-primary float-end" data-bs-toggle="modal" data-bs-target="#loginModal">
-                    Login
-                </button>
-                <%
-                    }
-                %>
             </ul>
+            <%
 
-    </div>
+                if (request.getSession() != null) {
+
+            %>
+            <form action="" method="" class="justify-content-end" role="search">
+                <button class="btn btn-outline-success " type="submit">Cerrar Sesión</button>
+            </form>
+            <%
+            } else {%>
+            <button type="button" class="btn btn-primary float-end" data-bs-toggle="modal" data-bs-target="#loginModal">
+                Login
+            </button>
+            <%
+                }
+            %>
+        </div>
 </nav>
-
