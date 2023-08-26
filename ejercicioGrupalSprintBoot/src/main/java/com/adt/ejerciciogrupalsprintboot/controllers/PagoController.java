@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
@@ -45,16 +46,15 @@ public class PagoController {
     public String createPago(@Param("txtUdUsuario") Integer usuario,
                              @RequestParam("txtMonto") Double monto,
                              @RequestParam("txtFecha")
-                                 @DateTimeFormat(pattern = "dd/MM/yyyy")
-                                 Date fecha_pago,
+                             @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate fecha_pago,
                              Model model) throws Exception {
-
-        PagoDTORequest pagoDTORequest = new PagoDTORequest(usuario,monto,fecha_pago);
+        PagoDTORequest pagoDTORequest = new PagoDTORequest(usuario, monto, fecha_pago);
         iPagoServices.createPago(pagoDTORequest);
         List<PagoDTOResponse> pagoDTOResponses = iPagoServices.listPago();
         model.addAttribute("listaPago", pagoDTOResponses);
         return "listaPagoView";
     }
+
 
     /**
      * @param model

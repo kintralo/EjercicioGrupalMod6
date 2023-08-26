@@ -7,6 +7,7 @@ import lombok.Setter;
 import lombok.AllArgsConstructor;
 import lombok.ToString;
 
+import java.time.LocalDate;
 import java.util.Date;
 @Getter
 @Setter
@@ -18,5 +19,5 @@ public class PagoDTOResponse {
     private Integer id_pago;
     private Integer id_usuario;
     private Double monto;
-    private Date fecha_pago;
+    private LocalDate fecha_pago;
 }

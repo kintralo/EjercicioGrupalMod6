@@ -15,6 +15,7 @@ import lombok.AllArgsConstructor;
 import lombok.ToString;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 /**
@@ -53,6 +54,6 @@ public class Pago {
 
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     @Column(name = "fecha_pago")
-    private Date fecha_pago;
+    private LocalDate fecha_pago;
 
 }

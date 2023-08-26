@@ -9,6 +9,7 @@ import lombok.Setter;
 import lombok.AllArgsConstructor;
 import lombok.ToString;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 
@@ -30,5 +31,5 @@ public class PagoDTORequest {
 
     private Integer id_Usuario;
     private Double monto;
-    private Date fecha_pago;
+    private LocalDate fecha_pago;
 }
