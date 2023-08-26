@@ -44,9 +44,8 @@ public class Pago {
     private Integer id_pago;
 
     @ManyToOne()
-    @JoinColumn()
-    @Column(name = "cliente_id")
-    private Usuarios usuarios;
+    @JoinColumn(name = "cliente_id")
+    private Usuarios usuario;
 
     @Column(name = "monto")
     private Double monto;
