@@ -53,5 +53,5 @@ public class Usuarios {
     private String contrasenya;
 
     @OneToMany(mappedBy = "pago", cascade = CascadeType.ALL)
-    List<Pago> pagoList;
+    private List<Pago> pagoList;
 }
