@@ -11,6 +11,7 @@ MVC.
 - Ándres Tapia
 - Victor Briso
 - Sebastián Araya
+- Vannya Riffo
 
 ## Variables de Entorno
 DB_USER=root;DB_PASS=;DB_HOST=localhost;DB_SCHEMA=prevencion_riesgos
@@ -22,4 +23,4 @@ Lista de tecnologías pre-requisitos mínimos para que el proyecto funcione loca
 - Apache Tomcat 10.0.27
 
 #### README UPDATE
-* ***Juan Pablo Váquez*** - *24-08-2023*
+* ***Juan Pablo Váquez*** - *25-08-2023*
