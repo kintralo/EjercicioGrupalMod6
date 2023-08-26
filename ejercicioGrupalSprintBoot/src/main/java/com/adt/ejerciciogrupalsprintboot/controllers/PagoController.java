@@ -6,6 +6,7 @@ import com.adt.ejerciciogrupalsprintboot.services.implementaciones.IPagoServices
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.data.repository.query.Param;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.WebDataBinder;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 
@@ -38,24 +40,16 @@ public class PagoController {
         binder.registerCustomEditor(       Date.class,
                 new CustomDateEditor(new SimpleDateFormat("dd/MM/yyyy"), true, 10));
     }
-    /**
-     * @param usuario
-     * @param monto
-     * @param fecha_pago
-     * @param model
-     * @return
-     * @throws Exception
-     */
 
     @PostMapping("/savePago")
     public String createPago(@Param("txtUdUsuario") Integer usuario,
                              @RequestParam("txtMonto") Double monto,
-                             @RequestParam("txtFecha") Date fecha_pago,
+                             @RequestParam("txtFecha")
+                                 @DateTimeFormat(pattern = "dd/MM/yyyy")
+                                 Date fecha_pago,
                              Model model) throws Exception {
 
-
-        PagoDTORequest pagoDTORequest = new PagoDTORequest(
-                usuario, monto, fecha_pago);
+        PagoDTORequest pagoDTORequest = new PagoDTORequest(usuario,monto,fecha_pago);
         iPagoServices.createPago(pagoDTORequest);
         List<PagoDTOResponse> pagoDTOResponses = iPagoServices.listPago();
         model.addAttribute("listaPago", pagoDTOResponses);
