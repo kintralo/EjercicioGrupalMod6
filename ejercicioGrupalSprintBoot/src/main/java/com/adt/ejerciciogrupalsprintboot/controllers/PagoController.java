@@ -1,4 +1,5 @@
 package com.adt.ejerciciogrupalsprintboot.controllers;
+
 import com.adt.ejerciciogrupalsprintboot.dto.PagoDTORequest;
 import com.adt.ejerciciogrupalsprintboot.dto.PagoDTOResponse;
 import com.adt.ejerciciogrupalsprintboot.services.implementaciones.IPagoServices;
@@ -14,7 +15,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * @author  Juan Pablo Vásquez
+ * @author Juan Pablo Vásquez
  * Ándres Tapia
  * Victor Briso
  * Sebastián Araya
@@ -23,25 +24,39 @@ import java.util.List;
  */
 @Controller
 public class PagoController {
+
     @Autowired
     private IPagoServices iPagoServices;
 
+    /**
+     * @param usuario
+     * @param monto
+     * @param fecha_pago
+     * @param model
+     * @return
+     * @throws Exception
+     */
     @PostMapping
-    public String createPago(@Param("")Integer usuario,
-                             @RequestParam("")Double monto,
+    public String createPago(@Param("") Integer usuario,
+                             @RequestParam("") Double monto,
                              @RequestParam("") Date fecha_pago,
-                             Model model)throws Exception{
-        PagoDTORequest pagoDTORequest= new PagoDTORequest(
-                usuario,monto,fecha_pago);
-        iPagoServices.createPago( pagoDTORequest);
-        List<PagoDTOResponse> pagoDTOResponses= iPagoServices.listPago();
+                             Model model) throws Exception {
+        PagoDTORequest pagoDTORequest = new PagoDTORequest(
+                usuario, monto, fecha_pago);
+        iPagoServices.createPago(pagoDTORequest);
+        List<PagoDTOResponse> pagoDTOResponses = iPagoServices.listPago();
         model.addAttribute("listaPago", pagoDTOResponses);
         return "/listaPagosView";
     }
 
+    /**
+     * @param model
+     * @return
+     * @throws Exception
+     */
     @GetMapping("/listaPagos")
-    public String getPagos(Model model)throws Exception{
-        List<PagoDTOResponse> pagoDTOResponses= iPagoServices.listPago();
+    public String getPagos(Model model) throws Exception {
+        List<PagoDTOResponse> pagoDTOResponses = iPagoServices.listPago();
         model.addAttribute("listaPago", pagoDTOResponses);
         return "/listaPagosView";
     }
