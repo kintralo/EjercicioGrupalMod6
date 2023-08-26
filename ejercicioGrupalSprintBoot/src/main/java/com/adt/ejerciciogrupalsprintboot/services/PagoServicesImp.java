@@ -37,9 +37,9 @@ public class PagoServicesImp implements IPagoServices {
      */
     @Override
     public PagoDTORequest createPago(PagoDTORequest pagoDTORequest) throws Exception {
+        System.out.println("ID USER"+pagoDTORequest.getId_Usuario());
         Usuarios usuario = iUsuariosRepository.getReferenceById(pagoDTORequest.getId_Usuario());
-        Pago pago = new Pago(
-                null,
+        Pago pago = new Pago(0,
                 usuario,
                 pagoDTORequest.getMonto(),
                 pagoDTORequest.getFecha_pago()

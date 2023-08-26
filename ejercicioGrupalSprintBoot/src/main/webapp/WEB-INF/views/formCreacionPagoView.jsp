@@ -15,7 +15,7 @@
                 <label for="lblIdUsuario" class="form-label">
                     <b>Id Usuario</b>
                 </label>
-                <input type="number" class="form-control" id=""
+                <input type="number" class="form-control"
                        name="txtUdUsuario" value="1" autofocus="autofocus"
                        required>
                 <div class="invalid-feedback">Campo obligatorio</div>

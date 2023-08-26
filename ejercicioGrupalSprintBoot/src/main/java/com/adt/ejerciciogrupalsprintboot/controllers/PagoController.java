@@ -51,7 +51,7 @@ public class PagoController {
      * @throws Exception
      */
     @PostMapping("/savePago")
-    public String createPago(@Param("txtUdUsuario") Integer usuario,
+    public String createPago(@RequestParam("txtUdUsuario") Integer usuario,
                              @RequestParam("txtMonto") Double monto,
                              @RequestParam("txtFecha")
                              @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate fecha_pago,

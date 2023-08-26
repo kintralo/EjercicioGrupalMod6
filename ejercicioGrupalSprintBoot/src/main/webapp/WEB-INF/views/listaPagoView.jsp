@@ -80,10 +80,10 @@
 
                     <c:forEach items="${listaPago}" var="pago">
                         <tr>
-                            <td>${pago.id_Pago}</td>
-                            <td>${pago.id_Usuario}</td>
+                            <td>${pago.id_pago}</td>
+                            <td>${pago.id_usuario}</td>
                             <td>${pago.monto}</td>
-                            <td>${pago.fecha}</td>
+                            <td>${pago.fecha_pago}</td>
 
                             <td>
                                 <button type="button" class="btn btn-warning " data-bs-toggle="modal"
