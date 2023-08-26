@@ -4,13 +4,17 @@ import com.adt.ejerciciogrupalsprintboot.dto.PagoDTORequest;
 import com.adt.ejerciciogrupalsprintboot.dto.PagoDTOResponse;
 import com.adt.ejerciciogrupalsprintboot.services.implementaciones.IPagoServices;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -28,6 +32,12 @@ public class PagoController {
     @Autowired
     private IPagoServices iPagoServices;
 
+
+    @InitBinder
+    public void initBinder(WebDataBinder binder){
+        binder.registerCustomEditor(       Date.class,
+                new CustomDateEditor(new SimpleDateFormat("dd/MM/yyyy"), true, 10));
+    }
     /**
      * @param usuario
      * @param monto
@@ -36,11 +46,14 @@ public class PagoController {
      * @return
      * @throws Exception
      */
-    @PostMapping
-    public String createPago(@Param("") Integer usuario,
-                             @RequestParam("") Double monto,
-                             @RequestParam("") Date fecha_pago,
+
+    @PostMapping("/savePago")
+    public String createPago(@Param("txtUdUsuario") Integer usuario,
+                             @RequestParam("txtMonto") Double monto,
+                             @RequestParam("txtFecha") Date fecha_pago,
                              Model model) throws Exception {
+
+
         PagoDTORequest pagoDTORequest = new PagoDTORequest(
                 usuario, monto, fecha_pago);
         iPagoServices.createPago(pagoDTORequest);

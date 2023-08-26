@@ -13,6 +13,7 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.AllArgsConstructor;
 import lombok.ToString;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
@@ -50,6 +51,7 @@ public class Pago {
     @Column(name = "monto")
     private Double monto;
 
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     @Column(name = "fecha_pago")
     private Date fecha_pago;
 
