@@ -3,7 +3,9 @@ package com.adt.ejerciciogrupalsprintboot.services;
 import com.adt.ejerciciogrupalsprintboot.dto.PagoDTORequest;
 import com.adt.ejerciciogrupalsprintboot.dto.PagoDTOResponse;
 import com.adt.ejerciciogrupalsprintboot.models.Pago;
+import com.adt.ejerciciogrupalsprintboot.models.Usuarios;
 import com.adt.ejerciciogrupalsprintboot.repositories.IPagoRepository;
+import com.adt.ejerciciogrupalsprintboot.repositories.IUsuariosRepository;
 import com.adt.ejerciciogrupalsprintboot.services.implementaciones.IPagoServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,6 +26,9 @@ public class PagoServicesImp implements IPagoServices {
     @Autowired
     private IPagoRepository iPagoRepository;
 
+    @Autowired
+    private IUsuariosRepository iUsuariosRepository;
+
     /**
      * @param pagoDTORequest
      * @return pagoDTORequest
@@ -31,9 +36,10 @@ public class PagoServicesImp implements IPagoServices {
      */
     @Override
     public PagoDTORequest createPago(PagoDTORequest pagoDTORequest) throws Exception {
+        Usuarios usuario = iUsuariosRepository.getReferenceById(pagoDTORequest.getId_Usuario());
         Pago pago = new Pago(
                 null,
-                pagoDTORequest.getUsuarios(),
+                usuario,
                 pagoDTORequest.getMonto(),
                 pagoDTORequest.getFecha_pago()
         );
@@ -52,7 +58,7 @@ public class PagoServicesImp implements IPagoServices {
             pagoDTOResponses.add(
                     new PagoDTOResponse(
                             pago.getId_pago(),
-                            pago.getUsuarios(),
+                            pago.getUsuario().getId(),
                             pago.getMonto(),
                             pago.getFecha_pago()
                     )
