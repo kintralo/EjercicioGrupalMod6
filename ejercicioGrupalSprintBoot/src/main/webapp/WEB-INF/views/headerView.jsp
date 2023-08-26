@@ -23,7 +23,7 @@
                                         aria-current="page" href="/">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="listaCapacitaciones"><b>Capacitaciones</b></a>
                 </li>
-                <li class="nav-item"><a class="nav-link" href="listaCapacitaciones"><b>Pagos</b></a>
+                <li class="nav-item"><a class="nav-link" href="listaPagos"><b>Pagos</b></a>
                 </li>
 
                 <li class="nav-item dropdown">
