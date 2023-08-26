@@ -72,8 +72,6 @@
                         <th scope="col">Id Usuario</th>
                         <th scope="col">Monto</th>
                         <th scope="col">Fecha</th>
-                        <th scope="col"><b>Botón</b></th>
-                        <th scope="col"><b>Botón</b></th>
                     </tr>
                     </thead>
                     <tbody>
@@ -84,19 +82,6 @@
                             <td>${pago.id_usuario}</td>
                             <td>${pago.monto}</td>
                             <td>${pago.fecha_pago}</td>
-
-                            <td>
-                                <button type="button" class="btn btn-warning " data-bs-toggle="modal"
-                                        id="btnActualizarCapacitacion"
-                                        data-bs-target="#editarCapacitacion">
-                                    <b>Actualizar</b>
-                                </button>
-                            </td>
-
-                            <td>
-                                <input type="button" class="btn btn-danger " value="Eliminar"
-                                       onclick="eliminarCapacitacion('')"/>
-                            </td>
                         </tr>
 
                     </c:forEach>
