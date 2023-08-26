@@ -16,7 +16,7 @@ import java.util.Date;
 public class PagoDTOResponse {
     //Atributos
     private Integer id_pago;
-    private Integer usuarios;
+    private Integer id_usuario;
     private Double monto;
     private Date fecha_pago;
 }

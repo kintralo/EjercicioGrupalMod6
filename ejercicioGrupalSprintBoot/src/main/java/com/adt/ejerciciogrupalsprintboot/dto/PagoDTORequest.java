@@ -28,7 +28,7 @@ import java.util.Date;
 @ToString
 public class PagoDTORequest {
 
-    private Integer idUsuario;
+    private Integer id_Usuario;
     private Double monto;
     private Date fecha_pago;
 }
